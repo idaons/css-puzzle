@@ -1,0 +1,170 @@
+body {
+
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient( #c80000, #6f0603);
+    text-align: center;
+    font-family: Arial;
+}
+
+.brett {
+    font-size:1vmin;
+    position: absolute;
+    left:calc(50% - 30em);
+    top:calc(50% - 30em);
+    width: 60em;
+    height: 60em;
+    //box-shadow: 0 0 2px 2px rgba(256,256,256,0.3);
+    border: solid 1px white;
+    overflow:hidden;
+}
+
+.brikke {
+    position:absolute;
+    width:20em;
+    height:20em;
+    transition:top .5s, left .5s;
+
+//    line-height: 20em;
+//  text-align: center;
+
+    //background-size: 300%;
+    //background-image: url("assets/009-2.jpg");
+
+}
+
+.brikke::after {
+    border: solid 0.1em white;
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-size: 60em 60em;
+    background-image: url("assets/009-2.jpg");
+
+}
+
+label {
+    display: inline-block;
+    position: absolute;
+    width: 20em;
+    height: 20em;
+    left: 0;
+    top: 0;
+    right:0;
+    bottom:0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+[class^=brikke] label[for$="move"]{
+
+}
+[class^=brikke] label[for$="move"]{
+
+}
+[class^=brikke] label[for$="move"]{
+
+}
+[class^=brikke] label[for$="move"]{
+
+}
+
+
+.brikke:hover::after {
+
+    border-color: green;
+
+}
+
+
+#move-8:checked ~ * .brikke-8{
+    left: 40em;
+}
+
+
+
+
+
+.brikke-1:after{
+    background-position: top left;
+}
+
+.brikke-2::after{
+    background-position: top;
+}
+.brikke-3:after{
+    background-position: top right;
+}
+
+.brikke-4:after{
+    background-position: center left;
+}
+.brikke-5:after{
+    background-position: center;
+}
+.brikke-6:after{
+    background-position: center right;
+}
+.brikke-7:after{
+    background-position: bottom left;
+}
+.brikke-8:after{
+    background-position: bottom;
+}
+
+.brikke-9:after{
+    background: transparent;
+    //background-position: bottom right;
+}
+
+
+.brikke-1{
+    background-position: top left;
+}
+
+.brikke-2{
+    left: 20em;
+    background-position: top;
+}
+.brikke-3{
+    left: 40em;
+    background-position: top right;
+}
+
+.brikke-4{
+    top: 20em;
+    background-position: center left;
+}
+.brikke-5{
+    top: 20em;
+    left: 20em;
+    background-position: center;
+}
+.brikke-6{
+    top: 20em;
+    left: 40em;
+    background-position: center right;
+}
+.brikke-7{
+    top: 40em;
+
+    background-position: bottom left;
+}
+.brikke-8{
+    top: 40em;
+    left: 20em;
+    background-position: bottom;
+}
+
+.brikke-9{
+    display:none;
+    background-position: bottom right;
+}
+
+
+input {
+   //display: none;
+}
