@@ -24,13 +24,6 @@ body {
     width:20em;
     height:20em;
     transition:top .5s, left .5s;
-
-//    line-height: 20em;
-//  text-align: center;
-
-    //background-size: 300%;
-    //background-image: url("assets/009-2.jpg");
-
 }
 
 .brikke::after {
@@ -43,7 +36,6 @@ body {
     bottom:0;
     background-size: 60em 60em;
     background-image: url("assets/009-2.jpg");
-
 }
 
 label {
@@ -80,8 +72,22 @@ label {
 }
 
 
-#move-8:checked ~ * .brikke-8{
+input[id="TilHMidt-8"]:checked ~ * .brikke-8{
+    left: 20em;
+}
+input[id="TilHoyre-8"]:checked ~ * .brikke-8{
     left: 40em;
+}
+input[id="TilHoyre-8"]:checked ~ * label[for="TilHMidt-8"] {
+    z-index: 5;
+}
+
+
+input[id="TilVMidt-6"]:checked ~ * .brikke-6{
+    top: 20em;
+}
+input[id="Ned-6"]:checked ~ * .brikke-6{
+    top: 40em;
 }
 
 
@@ -159,6 +165,7 @@ label {
     background-position: bottom;
 }
 
+/*TODO: vis brikke 9 ved win*/
 .brikke-9{
     display:none;
     background-position: bottom right;
@@ -167,4 +174,87 @@ label {
 
 input {
    //display: none;
+}
+
+
+/* Winner*/
+
+.win{
+    color: #fff;
+    font-size: 3em;
+    width:100%;
+    position:absolute;
+    bottom:0.6em;
+    line-height: 2em;
+    transform:scale(0);
+}
+
+#Opp-1:checked ~ #TilVenstre-1:checked ~ #Opp-2:checked
+~ #TilHMidt-2:checked ~ #Opp-3:checked ~ #TilHoyre-3:checked
+~ #TilVMidt-4:checked ~ #TilVenstre-4:checked ~ #TilVMidt-5:checked
+~ #TilHMidt-5:checked ~ #TilVMidt-6:checked ~ #TilHoyre-6:checked
+~ #Ned-7:checked ~ #TilVenstre-7:checked ~ #Ned-8:checked
+~ #TilHMidt-8:checked ~ .win{
+    animation-delay: 1s;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-name: win;
+}
+@keyframes win{
+    0%,100%{transform:scale(0);}
+    10%,90%{transform:scale(1);}
+}
+
+/*DEBUG*/
+input[name^="vertikal"]{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+
+/* CLOCK  */
+.clock {
+
+}
+.clock:before {
+    content: attr(data-counter);
+    animation: countup 1000s steps(1, start) forwards;
+}
+
+@keyframes countup {
+
+    1% {
+        content: '0';
+    }
+    10% {
+        content: '100';
+    }
+    20% {
+        content: '200';
+    }
+    30% {
+        content: '300';
+    }
+    40% {
+        content: '400';
+    }
+    50% {
+        content: '500';
+    }
+    60% {
+        content: '600';
+    }
+    70% {
+        content: '700';
+    }
+    80% {
+        content: '800';
+    }
+    90% {
+        content: '900';
+    }
+    100% {
+        content: 'Tiden er ute!';
+    }
 }
