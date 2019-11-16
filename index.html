@@ -5,56 +5,178 @@
     <meta charset="utf-8" />
 </head>
 <body>
+    <!--  brikke 1 -->
 
-    <input type="radio" id="move-1">
-    <input type="radio" id="move-2">
-    <input type="radio" id="move-3">
-    <input type="radio" id="move-4">
-    <input type="radio" id="move-5">
-    <input type="radio" id="move-6">
-    <input type="radio" id="move-7">
-    <input type="radio" id="move-8">
+    <input checked type="radio" id="opp-1"  name="vertikal-1" value="opp1">
+    <span>opp1</span>
+    <input type="radio" id="tilVMidt-1"  name="vertikal-1">
+    <input type="radio" id="ned-1"  name="vertikal-1">
+    <input checked type="radio" id="tilVenstre-1"  name="horisontal-1">
+    <input type="radio" id="tilHMidt-1" name="horisontal-1">
+    <input type="radio" id="tilHoyre-1" name="horisontal-1">
+
+
+    <!--  brikke 2 -->
+    <input checked type="radio" id="opp-2" name="vertikal-2">
+    <span>opp2</span>
+
+    <input type="radio" id="tilVMidt-2"  name="vertikal-2">
+    <input type="radio" id="ned-2"  name="vertikal-2">
+    <input type="radio" id="tilVenstre-2"  name="horisontal-2">
+    <input checked type="radio" id="tilHMidt-2" name="horisontal-2">
+    <input type="radio" id="tilHoyre-2" name="horisontal-2">
+
+    <!--  brikke 3 -->
+    <input checked type="radio" id="opp-3" name="vertikal-3">
+    <input type="radio" id="tilVMidt-3"  name="vertikal-3">
+    <input type="radio" id="ned-3"  name="vertikal-3">
+    <input type="radio" id="tilVenstre-3"  name="horisontal-3">
+    <input type="radio" id="tilHMidt-3" name="horisontal-3">
+    <input checked type="radio" id="tilHoyre-3" name="horisontal-3">
+
+    <!--  brikke 4 -->
+    <input type="radio" id="opp-4" name="horisontal-4">
+    <input checked type="radio" id="tilVMidt-4"  name="vertikal-4">
+    <input type="radio" id="ned-4"  name="vertikal-4">
+    <input checked type="radio" id="tilVenstre-4"  name="horisontal-4">
+    <input type="radio" id="tilHMidt-4" name="horisontal-4">
+    <input type="radio" id="tilHoyre-4" name="horisontal-4">
+
+    <!--  brikke 5 -->
+    <input type="radio" id="opp-5" name="vertikal-5">
+    <input checked type="radio" id="tilVMidt-5"  name="vertikal-5">
+    <span>tilVMidt5</span>
+
+    <input type="radio" id="ned-5"  name="vertikal-5">
+    <input type="radio" id="tilVenstre-5"  name="horisontal-5">
+    <input checked type="radio" id="tilHMidt-5" name="horisontal-5">
+    <input type="radio" id="tilHoyre-5" name="horisontal-5">
+
+    <!--  brikke 6 -->
+    <input type="radio" id="opp-6" name="vertikal-6">
+    <input checked type="radio" id="tilVMidt-6"  name="vertikal-6">
+    <span>tilVMidt6</span>
+
+    <input type="radio" id="ned-6"  name="vertikal-6">
+    <span>ned6</span>
+    <input type="radio" id="tilVenstre-6"  name="horisontal-6">
+    <input type="radio" id="tilHMidt-6" name="horisontal-6">
+    <input checked type="radio" id="tilHoyre-6" name="horisontal-6">
+
+    <!-- brikke 7 -->
+    <input type="radio" id="opp-7" name="vertikal-7">
+    <input type="radio" id="tilVMidt-7"  name="vertikal-7">
+    <span>tilVMidt7</span>
+
+    <input checked type="radio" id="ned-7"  name="vertikal-7">
+    <input checked type="radio" id="tilVenstre-7"  name="horisontal-7">
+    <input type="radio" id="tilHMidt-7" name="horisontal-7">
+    <span>tilHMidt7</span>
+
+    <input type="radio" id="tilHoyre-7" name="horisontal-7">
+
+    <!--  brikke 8 -->
+    <input type="radio" id="opp-8" name="vertikal-8">
+    <input type="radio" id="tilVMidt-8"  name="vertikal-8">
+    <span>tilVMidt8</span>
+
+    <input checked type="radio" id="ned-8"  name="vertikal-8">
+    <input type="radio" id="tilVenstre-8"  name="horisontal-8">
+    <input checked type="radio" id="tilHMidt-8" name="horisontal-8">
+    <span>tilHMidt8</span>
+
+    <input type="radio" id="tilHoyre-8" name="horisontal-8">
+
+    <!--  Brikke 9 - nothing--> 
 
     <section >
         <div class="brett">
             <div class="brikke brikke-1">
-                <label for="move-1"></label>
-            </div>
-            <div class="brikke brikke-2">
-                <label for="move-2"></label>
-
-            </div>
-            <div class="brikke brikke-3">
-                <label for="move-3"></label>
-
-            </div>
-            <div class="brikke brikke-4">
-                <label for="move-2"></label>
-
-            </div>
-            <div class="brikke brikke-5">
-                <label for="move-5"></label>
-            </div>
-            <div class="brikke brikke-6">
-                <label for="move-6"></label>
-            </div>
-            <div class="brikke brikke-7">
-                <label for="move-7"></label>
-            </div>
-            <div class="brikke brikke-8" >
-                <label for="move-8"></label>
-            </div>
-            <div class="brikke brikke-9" >
+                <fieldset for="vertikal-1">
+                    <legend for="vertikal-1"></legend>
+                    <label for="opp-1"></label>
+                    <label for="tilVMidt-1"></label>
+                    <label for="ned-1"></label>
+                    <label for="tilVenstre-1"></label>
+                    <label for="tilHoyre-1"></label>
+                    <label for="tilHMidt-1"></label>
+                </fieldset>
             </div>
 
-        </div>
-   </section>
+           <div class="brikke brikke-2">
+               <label for="opp-2"></label>
+               <label for="tilVMidt-2"></label>
+               <label for="ned-2"></label>
+               <label for="tilVenstre-2"></label>
+               <label for="tilHMidt-2"></label>
+               <label for="tilHoyre-2"></label>
 
-    <footer>
-        Tid:
-    </footer>
-    <article class="you-win">
-        Du vant! 🎅
-    </article>
+           </div>
+           <div class="brikke brikke-3">
+               <label for="opp-3"></label>
+               <label for="tilVMidt-3"></label>
+               <label for="ned-3"></label>
+               <label for="tilVenstre-3"></label>
+               <label for="tilHMidt-3"></label>
+               <label for="tilHoyre-3"></label>
+           </div>
+           <div class="brikke brikke-4">
+               <label for="opp-4"></label>
+               <label for="tilVMidt-4"></label>
+               <label for="ned-4"></label>
+               <label for="tilVenstre-4"></label>
+               <label for="tilHMidt-4"></label>
+               <label for="tilHoyre-4"></label>
+           </div>
+           <div class="brikke brikke-5">
+               <label for="opp-5"></label>
+               <label for="tilVMidt-5"></label>
+               <label for="ned-5"></label>
+               <label for="tilVenstre-5"></label>
+               <label for="tilHMidt-5"></label>
+               <label for="tilHoyre-5"></label>
+           </div>
+           <div class="brikke brikke-6">
+               <label for="opp-6"></label>
+               <label for="tilVMidt-6"></label>
+               <label for="ned-6"></label>
+               <label for="tilVenstre-6"></label>
+               <label for="tilHMidt-6"></label>
+               <label for="tilHoyre-6"></label>
+           </div>
+           <div class="brikke brikke-7">
+               <label for="opp-7"></label>
+               <label for="tilVMidt-7"></label>
+               <label for="ned-7"></label>
+               <label for="tilVenstre-7"></label>
+               <label for="tilHMidt-7"></label>
+               <label for="tilHoyre-7"></label>
+           </div>
+           <div class="brikke brikke-8" >
+               <label for="opp-8"></label>
+               <label for="tilVMidt-8"></label>
+               <label for="ned-8"></label>
+               <label for="tilVenstre-8"></label>
+               <label for="tilHMidt-8"></label>
+               <label for="tilHoyre-8"></label>
+           </div>
+           <div class="brikke brikke-9" >
+               hei
+           </div>
+
+       </div>
+  </section>
+
+   <footer>
+
+       <aside>
+           <span >Tid:</span>
+           <span class="clock" data-counter="0"></span>
+       </aside>
+
+   </footer>
+   <article class="win">
+       Du vant! 🎅
+   </article>
 </body>
 </html>

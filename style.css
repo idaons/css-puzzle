@@ -3,7 +3,7 @@ body {
     width: 100vw;
     min-height: 100vh;
     background: linear-gradient( #c80000, #6f0603);
-    text-align: center;
+    text-align: tilHMidt;
     font-family: Arial;
 }
 
@@ -24,13 +24,6 @@ body {
     width:20em;
     height:20em;
     transition:top .5s, left .5s;
-
-//    line-height: 20em;
-//  text-align: center;
-
-    //background-size: 300%;
-    //background-image: url("assets/009-2.jpg");
-
 }
 
 .brikke::after {
@@ -43,33 +36,15 @@ body {
     bottom:0;
     background-size: 60em 60em;
     background-image: url("assets/009-2.jpg");
-
 }
 
 label {
-    display: inline-block;
-    position: absolute;
-    width: 20em;
-    height: 20em;
-    left: 0;
-    top: 0;
-    right:0;
-    bottom:0;
-    cursor: pointer;
-    z-index: 1;
-}
-
-[class^=brikke] label[for$="move"]{
-
-}
-[class^=brikke] label[for$="move"]{
-
-}
-[class^=brikke] label[for$="move"]{
-
-}
-[class^=brikke] label[for$="move"]{
-
+    display:block;
+    width: 13em;
+    height: 13em;
+    position:absolute;
+    transform:rotate(45deg);
+    background:#444;
 }
 
 
@@ -80,11 +55,151 @@ label {
 }
 
 
-#move-8:checked ~ * .brikke-8{
-    left: 40em;
+/*Brikke 1*/
+[class^=brikke] label{
+    display:block;
+    width: 13em;
+    height: 13em;
+    position:absolute;
+    transform:rotate(45deg);
+    background:#444;
+}
+[class^=brikke] label:hover{
+    background:#666;
+    outline:.5em solid #111;
+}
+[class^=brikke] label[for$="opp"]{
+    top: -6em;
+    left:3.5em;
+}
+[class^=brikke] label[for$="tilVMidt"]{
+    display:none;
+    z-index:5;
+    left:3.5em;
+}
+[class^=brikke] label[for$="ned"]{
+    bottom: -6em;
+    left:3.5em;
+}
+[class^=brikke] label[for$="venstre"]{
+    left: -6em;
+    top:3.5em;
+}
+[class^=brikke] label[for$="tilHMidt"]{
+    display:none;
+    z-index:5;
+    top:3.5em;
+}
+[class^=brikke] label[for$="hoyre"]{
+    right: -6em;
+    top:3.5em;
 }
 
+#opp-1:checked ~* [for="tilVMidt-1"],
+#opp-2:checked ~* [for="tilVMidt-2"],
+#opp-:checked ~* [for="tilVMidt-3"],
+#opp-:checked ~* [for="tilVMidt-4"],
+#opp-:checked ~* [for="tilVMidt-5"],
+#opp-:checked ~* [for="tilVMidt-6"],
+#opp-:checked ~* [for="tilVMidt-7"],
+#opp-:checked ~* [for="tilVMidt-8"]{
+    display:block;
+    transform:translate(0,13em) rotate(45deg);
+}
+#ned-:checked ~* [for="tilVMidt-1"],
+#ned-:checked ~* [for="tilVMidt-2"],
+#ned-:checked ~* [for="tilVMidt-3"],
+#ned-:checked ~* [for="tilVMidt-4"],
+#ned-:checked ~* [for="tilVMidt-5"],
+#ned-:checked ~* [for="tilVMidt-6"],
+#ned-:checked ~* [for="tilVMidt-7"],
+#ned-:checked ~* [for="tilVMidt-8"]{
+    display:block;
+    transform:translate(0,-6em) rotate(45deg);
+}
+#tilVenstre-1:checked ~* [for="tilHMidt-1"],
+#tilVenstre-2:checked ~* [for="tilHMidt-2"],
+#tilVenstre-3:checked ~* [for="tilHMidt-3"],
+#tilVenstre-4:checked ~* [for="tilHMidt-4"],
+#tilVenstre-5:checked ~* [for="tilHMidt-5"],
+#tilVenstre-6:checked ~* [for="tilHMidt-6"],
+#tilVenstre-7:checked ~* [for="tilHMidt-7"],
+#tilVenstre-8:checked ~* [for="tilHMidt-8"]{
+    display:block;
+    transform:translate(13em,0) rotate(45deg);
+}
+#tilHoyre-1:checked ~* [for="tilHMidt-1"],
+#tilHoyre-2:checked ~* [for="tilHMidt-2"],
+#tilHoyre-3:checked ~* [for="tilHMidt-3"],
+#tilHoyre-4:checked ~* [for="tilHMidt-4"],
+#tilHoyre-5:checked ~* [for="tilHMidt-5"],
+#tilHoyre-6:checked ~* [for="tilHMidt-6"],
+#tilHoyre-7:checked ~* [for="tilHMidt-7"],
+#tilHoyre-8:checked ~* [for="tilHMidt-8"]{
+    display:block;
+    transform:translate(-6em,0) rotate(45deg);
+}
 
+#a-opp:checked ~ * .brikke-1,
+#b-opp:checked ~ * .brikke-2,
+#c-opp:checked ~ * .brikke-3,
+#d-opp:checked ~ * .brikke-4,
+#e-opp:checked ~ * .brikke-5,
+#f-opp:checked ~ * .brikke-6,
+#g-opp:checked ~ * .brikke-7,
+#h-opp:checked ~ * .brikke-8{
+    top:0;
+}
+#tilVMidt-1:checked ~ * .brikke-a,
+#tilVMidt-2:checked ~ * .brikke-b,
+#c-tilVMidt:checked ~ * .brikke-c,
+#d-tilVMidt:checked ~ * .brikke-d,
+#e-tilVMidt:checked ~ * .brikke-e,
+#f-tilVMidt:checked ~ * .brikke-f,
+#g-tilVMidt:checked ~ * .brikke-g,
+#h-tilVMidt:checked ~ * .brikke-h{
+    top:20em;
+}
+#a-ned:checked ~ * .brikke-a,
+#b-ned:checked ~ * .brikke-b,
+#c-ned:checked ~ * .brikke-c,
+#d-ned:checked ~ * .brikke-d,
+#e-ned:checked ~ * .brikke-e,
+#f-ned:checked ~ * .brikke-f,
+#g-ned:checked ~ * .brikke-g,
+#h-ned:checked ~ * .brikke-h{
+    top:40em;
+}
+#a-left:checked ~ * .brikke-a,
+#b-left:checked ~ * .brikke-b,
+#c-left:checked ~ * .brikke-c,
+#d-left:checked ~ * .brikke-d,
+#e-left:checked ~ * .brikke-e,
+#f-left:checked ~ * .brikke-f,
+#g-left:checked ~ * .brikke-g,
+#h-left:checked ~ * .brikke-h{
+    left:0;
+}
+#a-tilHMidt:checked ~ * .brikke-a,
+#b-tilHMidt:checked ~ * .brikke-b,
+#c-tilHMidt:checked ~ * .brikke-c,
+#d-tilHMidt:checked ~ * .brikke-d,
+#e-tilHMidt:checked ~ * .brikke-e,
+#f-tilHMidt:checked ~ * .brikke-f,
+#g-tilHMidt:checked ~ * .brikke-g,
+#h-tilHMidt:checked ~ * .brikke-h{
+    left:20em;
+}
+#a-right:checked ~ * .brikke-a,
+#b-right:checked ~ * .brikke-b,
+#c-right:checked ~ * .brikke-c,
+#d-right:checked ~ * .brikke-d,
+#e-right:checked ~ * .brikke-e,
+#f-right:checked ~ * .brikke-f,
+#g-right:checked ~ * .brikke-g,
+#h-right:checked ~ * .brikke-h{
+    left:40em;
+}
 
 
 
@@ -159,6 +274,7 @@ label {
     background-position: bottom;
 }
 
+/*TODO: vis brikke 9 ved win*/
 .brikke-9{
     display:none;
     background-position: bottom right;
@@ -167,4 +283,87 @@ label {
 
 input {
    //display: none;
+}
+
+
+/* Winner*/
+
+.win{
+    color: #fff;
+    font-size: 3em;
+    width:100%;
+    position:absolute;
+    bottom:0.6em;
+    line-height: 2em;
+    transform:scale(0);
+}
+
+#opp-1:checked ~ #tilVenstre-1:checked ~ #opp-2:checked
+~ #tilHMidt-2:checked ~ #opp-3:checked ~ #tilHoyre-3:checked
+~ #tilVMidt-4:checked ~ #tilVenstre-4:checked ~ #tilVMidt-5:checked
+~ #tilHMidt-5:checked ~ #tilVMidt-6:checked ~ #tilHoyre-6:checked
+~ #ned-7:checked ~ #tilVenstre-7:checked ~ #ned-8:checked
+~ #tilHMidt-8:checked ~ .win{
+    animation-delay: 1s;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-name: win;
+}
+@keyframes win{
+    0%,100%{transform:scale(0);}
+    10%,90%{transform:scale(1);}
+}
+
+/*DEBUG*/
+input[name^="vertikal"]{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+
+/* CLOCK  */
+.clock {
+
+}
+.clock:before {
+    content: attr(data-counter);
+    animation: countopp 1000s steps(1, start) forwards;
+}
+
+@keyframes countopp {
+
+    1% {
+        content: '0';
+    }
+    10% {
+        content: '100';
+    }
+    20% {
+        content: '200';
+    }
+    30% {
+        content: '300';
+    }
+    40% {
+        content: '400';
+    }
+    50% {
+        content: '500';
+    }
+    60% {
+        content: '600';
+    }
+    70% {
+        content: '700';
+    }
+    80% {
+        content: '800';
+    }
+    90% {
+        content: '900';
+    }
+    100% {
+        content: 'Tiden er ute!';
+    }
 }
