@@ -200,6 +200,17 @@ label {
 #h-right:checked ~ * .brikke-h{
     left:40em;
 }
+input[id="TilHoyre-8"]:checked ~ * label[for="TilHMidt-8"] {
+    z-index: 5;
+}
+
+
+input[id="TilVMidt-6"]:checked ~ * .brikke-6{
+    top: 20em;
+}
+input[id="Ned-6"]:checked ~ * .brikke-6{
+    top: 40em;
+}
 
 
 
