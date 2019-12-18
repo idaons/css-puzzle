@@ -50,50 +50,45 @@ label {
     height: 13em;
     position:absolute;
     transform:rotate(45deg);
-    background:#444;
+    background:green;
+    //clip-path: polygon(50% 0%, 80% 30%, 70% 30%, 90% 50%, 80% 50%, 100% 70%, 60% 70%, 60% 80%, 40% 80%, 40% 70%, 0% 70%, 20% 50%, 10% 50%, 30% 30%, 20% 30%);
+
 }
-/*
-[class^=brikke] label{
-    display:block;
-    width: 13em;
-    height: 13em;
-    position:absolute;
-    transform:rotate(45deg);
-    background:#444;
-}*/
-
-
-/*[class^=brikke] */label:hover{
+label:hover{
     background:#666;
     outline:.5em solid #111;
 }
-[class^=brikke] label[for^="opp"]{
+
+/*Default plassering av trykkeflate*/
+label[for^="opp"]{
     top: -6em;
     left:3.5em;
 }
-[class^=brikke] label[for^="tilVMidt"]{
+label[for^="tilVMidt"]{
     display:none;
     z-index:5;
     left:3.5em;
 }
-[class^=brikke] label[for^="ned"]{
+ label[for^="ned"]{
     bottom: -6em;
     left:3.5em;
 }
-[class^=brikke] label[for^="tilVenstre"]{
+label[for^="tilVenstre"]{
     left: -6em;
     top:3.5em;
 }
-[class^=brikke] label[for^="tilHMidt"]{
+label[for^="tilHMidt"]{
     display:none;
     z-index:5;
     top:3.5em;
 }
-[class^=brikke] label[for^="tilHoyre"]{
+label[for^="tilHoyre"]{
     right: -6em;
     top:3.5em;
 }
 
+/*For en checked input, velg alle etterfølgende elementer og finn children med bestemt attributt.
+Dete gjøres for å flytte og rotere trykke-flaten. */
 #opp-1:checked ~* [for="tilVMidt-1"],
 #opp-2:checked ~* [for="tilVMidt-2"],
 #opp-3:checked ~* [for="tilVMidt-3"],
@@ -136,18 +131,19 @@ label {
 #tilHoyre-7:checked ~* [for="tilHMidt-7"],
 #tilHoyre-8:checked ~* [for="tilHMidt-8"]{
     display:block;
+    background-color: pink;
     transform:translate(-6em,0) rotate(45deg);
 }
 
 /* Flytter brikker når tilsvarende radio er checked*/
-#opp-1:checked ~ * .brikke-1,
-#opp-2:checked ~ * .brikke-2,
-#opp-3:checked ~ * .brikke-3,
-#opp-4:checked ~ * .brikke-4,
-#opp-5:checked ~ * .brikke-5,
-#opp-6:checked ~ * .brikke-6,
-#opp-7:checked ~ * .brikke-7,
-#opp-8:checked ~ * .brikke-8{
+#opp-1:checked ~* .brikke-1,
+#opp-2:checked ~* .brikke-2,
+#opp-3:checked ~* .brikke-3,
+#opp-4:checked ~* .brikke-4,
+#opp-5:checked ~* .brikke-5,
+#opp-6:checked ~* .brikke-6,
+#opp-7:checked ~* .brikke-7,
+#opp-8:checked ~* .brikke-8{
     top:0;
 }
 #tilVMidt-1:checked ~ * .brikke-1,
@@ -190,25 +186,26 @@ label {
 #tilHMidt-8:checked ~ * .brikke-8{
     left:20em;
 }
-#tilHoyre-1:checked ~ * .brikke-1,
-#tilHoyre-2:checked ~ * .brikke-2,
-#tilHoyre-3:checked ~ * .brikke-3,
-#tilHoyre-4:checked ~ * .brikke-4,
-#tilHoyre-5:checked ~ * .brikke-5,
-#tilHoyre-6:checked ~ * .brikke-6,
-#tilHoyre-7:checked ~ * .brikke-7,
-#tilHoyre-8:checked ~ * .brikke-8{
+#tilHoyre-1:checked ~* .brikke-1,
+#tilHoyre-2:checked ~* .brikke-2,
+#tilHoyre-3:checked ~* .brikke-3,
+#tilHoyre-4:checked ~* .brikke-4,
+#tilHoyre-5:checked ~* .brikke-5,
+#tilHoyre-6:checked ~* .brikke-6,
+#tilHoyre-7:checked ~* .brikke-7,
+#tilHoyre-8:checked ~* .brikke-8{
     left:40em;
 }
 
 
-
+/*
 input[id="TilVMidt-6"]:checked ~ * .brikke-6{
     top: 20em;
 }
 input[id="Ned-6"]:checked ~ * .brikke-6{
     top: 40em;
 }
+ */
 
 
 /*Bestemmer hvilken bit av bildet som skal vises*/
@@ -239,12 +236,14 @@ input[id="Ned-6"]:checked ~ * .brikke-6{
     background-position: bottom;
 }
 
+/*TODO: vis brikke 9 ved win*/
+
 .brikke-9:after{
-    background: transparent;
+    //background: transparent;
     //background-position: bottom right;
 }
 
-
+/*
 .brikke-1{
     background-position: top left;
 }
@@ -278,21 +277,21 @@ input[id="Ned-6"]:checked ~ * .brikke-6{
     background-position: bottom left;
 }
 .brikke-8{
-    top: 40em;
-    left: 20em;
-    background-position: bottom;
+    //top: 40em;
+    //left: 20em;
+    //background-position: bottom;
 }
 
-/*TODO: vis brikke 9 ved win*/
+
+
 .brikke-9{
     display:none;
     background-position: bottom right;
 }
 
+*/
 
-input {
-   //display: none;
-}
+
 
 
 /* Winner*/
@@ -323,12 +322,7 @@ input {
     10%,90%{transform:scale(1);}
 }
 
-/*DEBUG*/
-input[name^="vertikal"]{
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-}
+
 
 
 /* CLOCK  */
@@ -376,3 +370,26 @@ input[name^="vertikal"]{
         content: 'Tiden er ute!';
     }
 }
+
+
+#three{
+    width:400px;
+    height:700px;
+    background:green;
+    clip-path: polygon(50% 0%, 80% 30%, 70% 30%, 90% 50%, 80% 50%, 100% 70%, 60% 70%, 60% 80%, 40% 80%, 40% 70%, 0% 70%, 20% 50%, 10% 50%, 30% 30%, 20% 30%);
+}
+
+
+
+/* Skjul radiobuttons*/
+input {
+    //display: none;
+}
+
+/* DEBUG */
+input[name^="vertikal"]{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
