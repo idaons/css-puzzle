@@ -13,7 +13,6 @@ body {
     top:calc(50% - 30em);
     width: 60em;
     height: 60em;
-    //box-shadow: 0 0 2px 2px rgba(256,256,256,0.3);
     border: solid 1px white;
     overflow:hidden;
 }
@@ -38,54 +37,181 @@ body {
     background-size: 60em 60em;
     background-image: url("assets/009-2.jpg");
 }
-.brikke:hover::after {
-    border-color: green;
-}
+
 
 
 /*Det du trykker på*/
 label {
+    transition: .6s;
     display:block;
-    width: 13em;
+    width: 9em;
     height: 13em;
     position:absolute;
-    transform:rotate(45deg);
+    transform:rotate(90deg);
     background:green;
-    //clip-path: polygon(50% 0%, 80% 30%, 70% 30%, 90% 50%, 80% 50%, 100% 70%, 60% 70%, 60% 80%, 40% 80%, 40% 70%, 0% 70%, 20% 50%, 10% 50%, 30% 30%, 20% 30%);
-
-}
-label:hover{
-    background:#666;
-    outline:.5em solid #111;
+    clip-path: polygon(50% 0%, 80% 30%, 70% 30%, 90% 50%, 80% 50%, 100% 70%, 60% 70%, 60% 80%, 40% 80%, 40% 70%, 0% 70%, 20% 50%, 10% 50%, 30% 30%, 20% 30%);
 }
 
-/*Default plassering av trykkeflate*/
+/*Vertikale labeler*/
+[for*="opp"],[for*="ned"],[for*="VMidt"]{
+    transform:rotate(180deg);
+}
+
+label:hover {
+    background: darkgreen;
+    cursor: pointer;
+}
+
+
+/*Default plassering av trykkeflate  */
 label[for^="opp"]{
-    top: -6em;
-    left:3.5em;
+    top: -7em;
+    left:5.5em;
 }
 label[for^="tilVMidt"]{
     display:none;
-    z-index:5;
-    left:3.5em;
+    left:5.5em;
 }
- label[for^="ned"]{
-    bottom: -6em;
-    left:3.5em;
+label[for^="ned"]{
+    bottom: -8em;
+    left:5.5em;
+    right: 0;
 }
 label[for^="tilVenstre"]{
-    left: -6em;
+    left: -7em;
     top:3.5em;
 }
+
 label[for^="tilHMidt"]{
     display:none;
-    z-index:5;
     top:3.5em;
 }
+
 label[for^="tilHoyre"]{
-    right: -6em;
+    right: -5em;
     top:3.5em;
 }
+
+
+/*Label V-midt ovenfra*/
+#opp-1:checked ~* [for="tilVMidt-1"],
+#opp-2:checked ~* [for="tilVMidt-2"],
+#opp-3:checked ~* [for="tilVMidt-3"],
+#opp-4:checked ~* [for="tilVMidt-4"],
+#opp-5:checked ~* [for="tilVMidt-5"],
+#opp-6:checked ~* [for="tilVMidt-6"],
+#opp-7:checked ~* [for="tilVMidt-7"],
+#opp-8:checked ~* [for="tilVMidt-8"]{
+    bottom: 5em;
+
+}
+
+/*Label V-midt nedenfra*/
+#ned-1:checked ~* [for="tilVMidt-1"],
+#ned-2:checked ~* [for="tilVMidt-2"],
+#ned-3:checked ~* [for="tilVMidt-3"],
+#ned-4:checked ~* [for="tilVMidt-4"],
+#ned-5:checked ~* [for="tilVMidt-5"],
+#ned-6:checked ~* [for="tilVMidt-6"],
+#ned-7:checked ~* [for="tilVMidt-7"],
+#ned-8:checked ~* [for="tilVMidt-8"]{
+    bottom: 10em;
+
+}
+
+/*Label H-midt fra venstre*/
+#tilVenstre-1:checked ~* [for="tilHMidt-1"],
+#tilVenstre-2:checked ~* [for="tilHMidt-2"],
+#tilVenstre-3:checked ~* [for="tilHMidt-3"],
+#tilVenstre-4:checked ~* [for="tilHMidt-4"],
+#tilVenstre-5:checked ~* [for="tilHMidt-5"],
+#tilVenstre-6:checked ~* [for="tilHMidt-6"],
+#tilVenstre-7:checked ~* [for="tilHMidt-7"],
+#tilVenstre-8:checked ~* [for="tilHMidt-8"]{
+    right: 8em;
+}
+
+/*Label H-midt fra høyre*/
+#tilHoyre-1:checked ~* [for="tilHMidt-1"],
+#tilHoyre-2:checked ~* [for="tilHMidt-2"],
+#tilHoyre-3:checked ~* [for="tilHMidt-3"],
+#tilHoyre-4:checked ~* [for="tilHMidt-4"],
+#tilHoyre-5:checked ~* [for="tilHMidt-5"],
+#tilHoyre-6:checked ~* [for="tilHMidt-6"],
+#tilHoyre-7:checked ~* [for="tilHMidt-7"],
+#tilHoyre-8:checked ~* [for="tilHMidt-8"]{
+    right: 12em;
+}
+
+/*Hover opp*/
+[for*="opp"]:hover{
+   top: -10em;
+}
+
+
+/*Hover ned*/
+[for*="ned"]:hover {
+    bottom: -10em;
+}
+
+/*Hover venstre*/
+[for*="Venstre"]:hover{
+    left: -10em;
+}
+
+/*Hover høyre*/
+[for*="Hoyre"]:hover{
+    right: -8em;
+}
+
+/*Hover V-midt ovenfra*/
+#opp-1:checked ~* [for="tilVMidt-1"]:hover,
+#opp-2:checked ~* [for="tilVMidt-2"]:hover,
+#opp-3:checked ~* [for="tilVMidt-3"]:hover,
+#opp-4:checked ~* [for="tilVMidt-4"]:hover,
+#opp-5:checked ~* [for="tilVMidt-5"]:hover,
+#opp-6:checked ~* [for="tilVMidt-6"]:hover,
+#opp-7:checked ~* [for="tilVMidt-7"]:hover,
+#opp-8:checked ~* [for="tilVMidt-8"]:hover{
+    bottom: 3em;
+}
+
+/*Hover V-midt nedenfra*/
+#ned-1:checked ~* [for="tilVMidt-1"]:hover,
+#ned-2:checked ~* [for="tilVMidt-2"]:hover,
+#ned-3:checked ~* [for="tilVMidt-3"]:hover,
+#ned-4:checked ~* [for="tilVMidt-4"]:hover,
+#ned-5:checked ~* [for="tilVMidt-5"]:hover,
+#ned-6:checked ~* [for="tilVMidt-6"]:hover,
+#ned-7:checked ~* [for="tilVMidt-7"]:hover,
+#ned-8:checked ~* [for="tilVMidt-8"]:hover{
+    bottom: 12em;
+}
+
+/*Hover H-midt fra venstre*/
+#tilVenstre-1:checked ~* [for="tilHMidt-1"]:hover,
+#tilVenstre-2:checked ~* [for="tilHMidt-2"]:hover,
+#tilVenstre-3:checked ~* [for="tilHMidt-3"]:hover,
+#tilVenstre-4:checked ~* [for="tilHMidt-4"]:hover,
+#tilVenstre-5:checked ~* [for="tilHMidt-5"]:hover,
+#tilVenstre-6:checked ~* [for="tilHMidt-6"]:hover,
+#tilVenstre-7:checked ~* [for="tilHMidt-7"]:hover,
+#tilVenstre-8:checked ~* [for="tilHMidt-8"]:hover{
+    right: 5em;
+}
+
+/*Hover H-midt fra høyre*/
+#tilHoyre-1:checked ~* [for="tilHMidt-1"]:hover,
+#tilHoyre-2:checked ~* [for="tilHMidt-2"]:hover,
+#tilHoyre-3:checked ~* [for="tilHMidt-3"]:hover,
+#tilHoyre-4:checked ~* [for="tilHMidt-4"]:hover,
+#tilHoyre-5:checked ~* [for="tilHMidt-5"]:hover,
+#tilHoyre-6:checked ~* [for="tilHMidt-6"]:hover,
+#tilHoyre-7:checked ~* [for="tilHMidt-7"]:hover,
+#tilHoyre-8:checked ~* [for="tilHMidt-8"]:hover{
+    right: 14em;
+}
+
 
 /*For en checked input, velg alle etterfølgende elementer og finn children med bestemt attributt.
 Dete gjøres for å flytte og rotere trykke-flaten. */
@@ -98,7 +224,7 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 #opp-7:checked ~* [for="tilVMidt-7"],
 #opp-8:checked ~* [for="tilVMidt-8"]{
     display:block;
-    transform:translate(0,13em) rotate(45deg);
+    transform:translate(0,13em) rotate(180deg);
 }
 #ned-1:checked ~* [for="tilVMidt-1"],
 #ned-2:checked ~* [for="tilVMidt-2"],
@@ -109,7 +235,7 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 #ned-7:checked ~* [for="tilVMidt-7"],
 #ned-8:checked ~* [for="tilVMidt-8"]{
     display:block;
-    transform:translate(0,-6em) rotate(45deg);
+    transform:translate(0,-6em) rotate(180deg);
 }
 #tilVenstre-1:checked ~* [for="tilHMidt-1"],
 #tilVenstre-2:checked ~* [for="tilHMidt-2"],
@@ -120,7 +246,7 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 #tilVenstre-7:checked ~* [for="tilHMidt-7"],
 #tilVenstre-8:checked ~* [for="tilHMidt-8"]{
     display:block;
-    transform:translate(13em,0) rotate(45deg);
+    transform:translate(13em,0) rotate(90deg);
 }
 #tilHoyre-1:checked ~* [for="tilHMidt-1"],
 #tilHoyre-2:checked ~* [for="tilHMidt-2"],
@@ -131,8 +257,54 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 #tilHoyre-7:checked ~* [for="tilHMidt-7"],
 #tilHoyre-8:checked ~* [for="tilHMidt-8"]{
     display:block;
-    background-color: pink;
-    transform:translate(-6em,0) rotate(45deg);
+    transform:translate(-6em,0) rotate(90deg);
+}
+
+
+
+#tilHoyre-1:checked ~* [for="tilVenstre-1"],
+#tilHoyre-2:checked ~* [for="tilVenstre-2"],
+#tilHoyre-3:checked ~* [for="tilVenstre-3"],
+#tilHoyre-4:checked ~* [for="tilVenstre-4"],
+#tilHoyre-5:checked ~* [for="tilVenstre-5"],
+#tilHoyre-6:checked ~* [for="tilVenstre-6"],
+#tilHoyre-7:checked ~* [for="tilVenstre-7"],
+#tilHoyre-8:checked ~* [for="tilVenstre-8"]{
+    display:none;
+}
+
+#tilVenstre-1:checked ~* [for="tilHoyre-1"],
+#tilVenstre-2:checked ~* [for="tilHoyre-2"],
+#tilVenstre-3:checked ~* [for="tilHoyre-3"],
+#tilVenstre-4:checked ~* [for="tilHoyre-4"],
+#tilVenstre-5:checked ~* [for="tilHoyre-5"],
+#tilVenstre-6:checked ~* [for="tilHoyre-6"],
+#tilVenstre-7:checked ~* [for="tilHoyre-7"],
+#tilVenstre-8:checked ~* [for="tilHoyre-8"]{
+    display:none;
+}
+
+#opp-1:checked ~* [for="ned-1"],
+#opp-2:checked ~* [for="ned-2"],
+#opp-3:checked ~* [for="ned-3"],
+#opp-4:checked ~* [for="ned-4"],
+#opp-5:checked ~* [for="ned-5"],
+#opp-6:checked ~* [for="ned-6"],
+#opp-7:checked ~* [for="ned-7"],
+#opp-8:checked ~* [for="ned-8"]{
+    display:none;
+
+}
+#ned-1:checked ~* [for="opp-1"],
+#ned-2:checked ~* [for="opp-2"],
+#ned-3:checked ~* [for="opp-3"],
+#ned-4:checked ~* [for="opp-4"],
+#ned-5:checked ~* [for="opp-5"],
+#ned-6:checked ~* [for="opp-6"],
+#ned-7:checked ~* [for="opp-7"],
+#ned-8:checked ~* [for="opp-8"]{
+    display:none;
+
 }
 
 /* Flytter brikker når tilsvarende radio er checked*/
@@ -198,14 +370,6 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 }
 
 
-/*
-input[id="TilVMidt-6"]:checked ~ * .brikke-6{
-    top: 20em;
-}
-input[id="Ned-6"]:checked ~ * .brikke-6{
-    top: 40em;
-}
- */
 
 
 /*Bestemmer hvilken bit av bildet som skal vises*/
@@ -239,57 +403,7 @@ input[id="Ned-6"]:checked ~ * .brikke-6{
 /*TODO: vis brikke 9 ved win*/
 
 .brikke-9:after{
-    //background: transparent;
-    //background-position: bottom right;
 }
-
-/*
-.brikke-1{
-    background-position: top left;
-}
-
-.brikke-2{
-    left: 20em;
-    background-position: top;
-}
-.brikke-3{
-    left: 40em;
-    background-position: top right;
-}
-
-.brikke-4{
-    top: 20em;
-    background-position: center left;
-}
-.brikke-5{
-    top: 20em;
-    left: 20em;
-    background-position: center;
-}
-.brikke-6{
-    top: 20em;
-    left: 40em;
-    background-position: center right;
-}
-.brikke-7{
-    top: 40em;
-
-    background-position: bottom left;
-}
-.brikke-8{
-    //top: 40em;
-    //left: 20em;
-    //background-position: bottom;
-}
-
-
-
-.brikke-9{
-    display:none;
-    background-position: bottom right;
-}
-
-*/
 
 
 
@@ -325,65 +439,10 @@ input[id="Ned-6"]:checked ~ * .brikke-6{
 
 
 
-/* CLOCK  */
-.clock {
-
-}
-.clock:before {
-    content: attr(data-counter);
-    animation: countopp 1000s steps(1, start) forwards;
-}
-
-@keyframes countopp {
-
-    1% {
-        content: '0';
-    }
-    10% {
-        content: '100';
-    }
-    20% {
-        content: '200';
-    }
-    30% {
-        content: '300';
-    }
-    40% {
-        content: '400';
-    }
-    50% {
-        content: '500';
-    }
-    60% {
-        content: '600';
-    }
-    70% {
-        content: '700';
-    }
-    80% {
-        content: '800';
-    }
-    90% {
-        content: '900';
-    }
-    100% {
-        content: 'Tiden er ute!';
-    }
-}
-
-
-#three{
-    width:400px;
-    height:700px;
-    background:green;
-    clip-path: polygon(50% 0%, 80% 30%, 70% 30%, 90% 50%, 80% 50%, 100% 70%, 60% 70%, 60% 80%, 40% 80%, 40% 70%, 0% 70%, 20% 50%, 10% 50%, 30% 30%, 20% 30%);
-}
-
-
 
 /* Skjul radiobuttons*/
 input {
-    //display: none;
+    display: none;
 }
 
 /* DEBUG */
