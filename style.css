@@ -1,5 +1,7 @@
-body {
-    background: linear-gradient( #c80000, #6f0603);
+html {
+    max-height: 100vh;
+    height: 100vh;
+    background: linear-gradient(#c80000, #6f0603);
     text-align: center;
     font-family: Arial;
 }
@@ -23,6 +25,9 @@ body {
     height:30vmin;
     transition:top .5s, left .5s;
 }
+
+
+
 
 /*Bilde-brikkene*/
 .brikke::after {
@@ -406,10 +411,11 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
     background-position: bottom;
 }
 
-/*TODO: vis brikke 9 ved win*/
-
 .brikke-9:after{
+    background-position: bottom right;
 }
+
+
 
 
 /* Når ferdig */
@@ -432,6 +438,7 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
     text-shadow: 0 0 .2em #000;
 }
 
+
 #opp-1:checked ~ #tilVenstre-1:checked ~ #opp-2:checked
 ~ #tilHMidt-2:checked ~ #opp-3:checked ~ #tilHoyre-3:checked
 ~ #tilVMidt-4:checked ~ #tilVenstre-4:checked ~ #tilVMidt-5:checked
@@ -442,6 +449,26 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
     animation-duration: 4s;
     animation-iteration-count: 1;
     animation-name: win;
+}
+
+/*Vis brikke 9*/
+
+.brikke-9{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 1s linear;
+    left:60vmin;
+    top: 60vmin;
+}
+
+#opp-1:checked ~ #tilVenstre-1:checked ~ #opp-2:checked
+~ #tilHMidt-2:checked ~ #opp-3:checked ~ #tilHoyre-3:checked
+~ #tilVMidt-4:checked ~ #tilVenstre-4:checked ~ #tilVMidt-5:checked
+~ #tilHMidt-5:checked ~ #tilVMidt-6:checked ~ #tilHoyre-6:checked
+~ #ned-7:checked ~ #tilVenstre-7:checked ~ #ned-8:checked
+~ #tilHMidt-8:checked ~* .brikke-9{
+    visibility: visible;
+    opacity: 1;
 }
 
 @keyframes win{
