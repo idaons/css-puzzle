@@ -1,26 +1,26 @@
 body {
-    width: 100vw;
-    min-height: 100vh;
     background: linear-gradient( #c80000, #6f0603);
     text-align: center;
     font-family: Arial;
 }
 
 .brett {
-    font-size:1vmin;
+    font-size:1vmin; /*relative to viewport size*/
     position: absolute;
-    left:calc(50% - 30em);
-    top:calc(50% - 30em);
-    width: 60em;
-    height: 60em;
-    border: solid 1px white;
-    overflow:hidden;
+    top: 50%;
+    left: 50%;
+    margin: -45vmin 0 0 -45vmin;
+    width: 90vmin;
+    height: 90vmin;
+    border: solid 0.1em white;
+    overflow: hidden;
 }
+
 
 .brikke {
     position:absolute;
-    width:20em;
-    height:20em;
+    width:30vmin;
+    height:30vmin;
     transition:top .5s, left .5s;
 }
 
@@ -34,7 +34,7 @@ body {
     right:0;
     bottom:0;
     z-index: 10;
-    background-size: 60em 60em;
+    background-size: 90vmin 90vmin;
     background-image: url("assets/009-2.jpg");
 }
 
@@ -44,17 +44,11 @@ body {
 label {
     transition: .6s;
     display:block;
-    width: 9em;
-    height: 13em;
+    width: 17vmin;
+    height: 20vmin;
     position:absolute;
-    transform:rotate(90deg);
     background:green;
-    clip-path: polygon(50% 0%, 80% 30%, 70% 30%, 90% 50%, 80% 50%, 100% 70%, 60% 70%, 60% 80%, 40% 80%, 40% 70%, 0% 70%, 20% 50%, 10% 50%, 30% 30%, 20% 30%);
-}
-
-/*Vertikale labeler*/
-[for*="opp"],[for*="ned"],[for*="VMidt"]{
-    transform:rotate(180deg);
+    clip-path: polygon(50% 8%, 85% 30%, 70% 30%, 95% 50%, 75% 50%, 100% 70%, 60% 70%, 60% 80%, 40% 80%, 40% 70%, 0% 70%, 25% 50%, 5% 50%, 30% 30%, 15% 30%);
 }
 
 label:hover {
@@ -65,33 +59,34 @@ label:hover {
 
 /*Default plassering av trykkeflate  */
 label[for^="opp"]{
-    top: -7em;
-    left:5.5em;
-}
-label[for^="tilVMidt"]{
-    display:none;
-    left:5.5em;
-}
-label[for^="ned"]{
-    bottom: -8em;
-    left:5.5em;
-    right: 0;
-}
-label[for^="tilVenstre"]{
-    left: -7em;
-    top:3.5em;
+    top: -13vmin;
+    left: 6vmin;
+    transform:rotate(0deg);
 }
 
-label[for^="tilHMidt"]{
-    display:none;
-    top:3.5em;
+label[for^="ned"]{
+    bottom: -13vmin; /*top: 20*/
+    left:7vmin;
+    transform:rotate(180deg);
+
+}
+label[for^="tilVenstre"]{
+    left: -11vmin;
+    top:5vmin;
+    transform:rotate(-90deg);
 }
 
 label[for^="tilHoyre"]{
-    right: -5em;
-    top:3.5em;
+    right: -12vmin;
+    top:5vmin;
+    transform:rotate(90deg);
 }
 
+
+label[for^="tilVMidt"]{
+    display:none;
+    left:7vmin;
+}
 
 /*Label V-midt ovenfra*/
 #opp-1:checked ~* [for="tilVMidt-1"],
@@ -102,7 +97,8 @@ label[for^="tilHoyre"]{
 #opp-6:checked ~* [for="tilVMidt-6"],
 #opp-7:checked ~* [for="tilVMidt-7"],
 #opp-8:checked ~* [for="tilVMidt-8"]{
-    bottom: 5em;
+    bottom: 0vmin;
+    transform:rotate(180deg);
 
 }
 
@@ -115,8 +111,15 @@ label[for^="tilHoyre"]{
 #ned-6:checked ~* [for="tilVMidt-6"],
 #ned-7:checked ~* [for="tilVMidt-7"],
 #ned-8:checked ~* [for="tilVMidt-8"]{
-    bottom: 10em;
+    bottom: 17vmin;
+    transform:rotate(0deg);
 
+
+}
+
+label[for^="tilHMidt"]{
+    display:none;
+    top:5vmin;
 }
 
 /*Label H-midt fra venstre*/
@@ -128,7 +131,8 @@ label[for^="tilHoyre"]{
 #tilVenstre-6:checked ~* [for="tilHMidt-6"],
 #tilVenstre-7:checked ~* [for="tilHMidt-7"],
 #tilVenstre-8:checked ~* [for="tilHMidt-8"]{
-    right: 8em;
+    right: 1vmin;
+    transform:rotate(90deg);
 }
 
 /*Label H-midt fra høyre*/
@@ -140,28 +144,29 @@ label[for^="tilHoyre"]{
 #tilHoyre-6:checked ~* [for="tilHMidt-6"],
 #tilHoyre-7:checked ~* [for="tilHMidt-7"],
 #tilHoyre-8:checked ~* [for="tilHMidt-8"]{
-    right: 12em;
+    right: 18vmin;
+    transform:rotate(-90deg);
 }
 
 /*Hover opp*/
 [for*="opp"]:hover{
-   top: -10em;
+   top: -15vmin;
 }
 
 
 /*Hover ned*/
 [for*="ned"]:hover {
-    bottom: -10em;
+    bottom: -15vmin;
 }
 
 /*Hover venstre*/
 [for*="Venstre"]:hover{
-    left: -10em;
+    left: -14vmin;
 }
 
 /*Hover høyre*/
 [for*="Hoyre"]:hover{
-    right: -8em;
+    right: -14vmin;
 }
 
 /*Hover V-midt ovenfra*/
@@ -173,7 +178,7 @@ label[for^="tilHoyre"]{
 #opp-6:checked ~* [for="tilVMidt-6"]:hover,
 #opp-7:checked ~* [for="tilVMidt-7"]:hover,
 #opp-8:checked ~* [for="tilVMidt-8"]:hover{
-    bottom: 3em;
+    bottom: -2vmin;
 }
 
 /*Hover V-midt nedenfra*/
@@ -185,7 +190,7 @@ label[for^="tilHoyre"]{
 #ned-6:checked ~* [for="tilVMidt-6"]:hover,
 #ned-7:checked ~* [for="tilVMidt-7"]:hover,
 #ned-8:checked ~* [for="tilVMidt-8"]:hover{
-    bottom: 12em;
+    bottom: 20vmin;
 }
 
 /*Hover H-midt fra venstre*/
@@ -197,7 +202,7 @@ label[for^="tilHoyre"]{
 #tilVenstre-6:checked ~* [for="tilHMidt-6"]:hover,
 #tilVenstre-7:checked ~* [for="tilHMidt-7"]:hover,
 #tilVenstre-8:checked ~* [for="tilHMidt-8"]:hover{
-    right: 5em;
+    right: -1vmin;
 }
 
 /*Hover H-midt fra høyre*/
@@ -209,7 +214,7 @@ label[for^="tilHoyre"]{
 #tilHoyre-6:checked ~* [for="tilHMidt-6"]:hover,
 #tilHoyre-7:checked ~* [for="tilHMidt-7"]:hover,
 #tilHoyre-8:checked ~* [for="tilHMidt-8"]:hover{
-    right: 14em;
+    right: 21vmin;
 }
 
 
@@ -224,7 +229,7 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 #opp-7:checked ~* [for="tilVMidt-7"],
 #opp-8:checked ~* [for="tilVMidt-8"]{
     display:block;
-    transform:translate(0,13em) rotate(180deg);
+    transform:translate(0,13vmin) rotate(180deg);
 }
 #ned-1:checked ~* [for="tilVMidt-1"],
 #ned-2:checked ~* [for="tilVMidt-2"],
@@ -235,7 +240,7 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 #ned-7:checked ~* [for="tilVMidt-7"],
 #ned-8:checked ~* [for="tilVMidt-8"]{
     display:block;
-    transform:translate(0,-6em) rotate(180deg);
+    transform:translate(0,-6vmin) rotate(0deg);
 }
 #tilVenstre-1:checked ~* [for="tilHMidt-1"],
 #tilVenstre-2:checked ~* [for="tilHMidt-2"],
@@ -246,7 +251,7 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 #tilVenstre-7:checked ~* [for="tilHMidt-7"],
 #tilVenstre-8:checked ~* [for="tilHMidt-8"]{
     display:block;
-    transform:translate(13em,0) rotate(90deg);
+    transform:translate(13vmin,0) rotate(90deg);
 }
 #tilHoyre-1:checked ~* [for="tilHMidt-1"],
 #tilHoyre-2:checked ~* [for="tilHMidt-2"],
@@ -257,7 +262,7 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 #tilHoyre-7:checked ~* [for="tilHMidt-7"],
 #tilHoyre-8:checked ~* [for="tilHMidt-8"]{
     display:block;
-    transform:translate(-6em,0) rotate(90deg);
+    transform:translate(-6vmin,0) rotate(-90deg);
 }
 
 
@@ -326,7 +331,7 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 #tilVMidt-6:checked ~ * .brikke-6,
 #tilVMidt-7:checked ~ * .brikke-7,
 #tilVMidt-8:checked ~ * .brikke-8{
-    top:20em;
+    top:30vmin;
 }
 #ned-1:checked ~ * .brikke-1,
 #ned-2:checked ~ * .brikke-2,
@@ -336,7 +341,7 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 #ned-6:checked ~ * .brikke-6,
 #ned-7:checked ~ * .brikke-7,
 #ned-8:checked ~ * .brikke-8{
-    top:40em;
+    top:60vmin;
 }
 #tilVenstre-1:checked ~ * .brikke-1,
 #tilVenstre-2:checked ~ * .brikke-2,
@@ -356,7 +361,7 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 #tilHMidt-6:checked ~ * .brikke-6,
 #tilHMidt-7:checked ~ * .brikke-7,
 #tilHMidt-8:checked ~ * .brikke-8{
-    left:20em;
+    left:30vmin;
 }
 #tilHoyre-1:checked ~* .brikke-1,
 #tilHoyre-2:checked ~* .brikke-2,
@@ -366,7 +371,7 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 #tilHoyre-6:checked ~* .brikke-6,
 #tilHoyre-7:checked ~* .brikke-7,
 #tilHoyre-8:checked ~* .brikke-8{
-    left:40em;
+    left:60vmin;
 }
 
 
@@ -406,18 +411,24 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
 }
 
 
-
-
-/* Winner*/
-
+/* Når ferdig */
 .win{
     color: #fff;
-    font-size: 3em;
+    font-size: 13vmin;
     width:100%;
-    position:absolute;
-    bottom:0.6em;
+    height: 2em;
     line-height: 2em;
+    z-index: 27;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -1em 0 0 -50%;
+    text-align: center;
+    background: green;
     transform:scale(0);
+}
+.winText {
+    text-shadow: 0 0 .2em #000;
 }
 
 #opp-1:checked ~ #tilVenstre-1:checked ~ #opp-2:checked
@@ -431,12 +442,11 @@ Dete gjøres for å flytte og rotere trykke-flaten. */
     animation-iteration-count: 1;
     animation-name: win;
 }
+
 @keyframes win{
     0%,100%{transform:scale(0);}
     10%,90%{transform:scale(1);}
 }
-
-
 
 
 
